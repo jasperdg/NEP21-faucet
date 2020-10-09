@@ -1,0 +1,1 @@
+near deploy --wasmFile res/nep21_faucet.wasm --accountId $0.flux-dev --masterAccount $1
