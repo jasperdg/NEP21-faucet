@@ -1,0 +1,29 @@
+[package]
+name = "nep21-faucet"
+version = "0.1.0"
+authors = ["jasperdg <jasperdegooijer@gmail.com>"]
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+near-sdk = "2.0.0"
+
+[dev-dependencies]
+near-crypto = { git = "https://github.com/nearprotocol/nearcore.git" }
+near-primitives = { git = "https://github.com/nearprotocol/nearcore.git" }
+near-runtime-standalone = { git = "https://github.com/nearprotocol/nearcore.git" }
+lazy_static = "1.4.0"
+
+[profile.release]
+codegen-units = 1
+# Tell `rustc` to optimize for small code size.
+opt-level = "z"
+lto = true
+debug = false
+panic = "abort"
+overflow-checks = true
+
+[workspace]
+members = []
